@@ -12,6 +12,14 @@ class Total
     return @total
   end
 
-  
+  def tax
+    @tax = (@total * 0.0864).round(2)
+    return @tax
+  end
+
+  def grand_total
+    @total = order_sum + tax
+    return @total
+  end
 
 end
