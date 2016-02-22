@@ -9,7 +9,7 @@ class Total
     @order.each do |i|
       @total += i[1].inject(:*)
     end
-    return @total
+    return @total.round(2)
   end
 
   def tax
