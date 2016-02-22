@@ -16,6 +16,10 @@ class Order
     @current_order << [food, [amount, prices(food)]]
   end
 
+  def calculate_total(current_order)
+    Total.new(current_order)
+  end
+
 private
 
   def menu_hash

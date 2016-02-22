@@ -10,6 +10,7 @@ describe 'Order' do
   it 'Starts with an empty order' do
     expect(order.current_order).to eq([])
   end
+
   describe 'Placing an order' do
     it 'Adds item to current order' do
       order.place_order("Cafe Latte", 2)
