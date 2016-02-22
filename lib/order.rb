@@ -1,4 +1,5 @@
 require 'json'
+require 'total'
 
 class Order
 
@@ -16,8 +17,9 @@ class Order
     @current_order << [food, [amount, prices(food)]]
   end
 
-  def calculate_total(current_order)
-    Total.new(current_order)
+  def calculate_total
+    total = Total.new(@current_order)
+    return total.grand_total
   end
 
 private

@@ -1,3 +1,6 @@
+require 'order'
+require 'total'
+
 # User Stories
 #
 # As a customer
@@ -11,3 +14,15 @@
 # As a customer
 # So that I can pay the correct amount
 # I would like to see the total cost of my order
+
+describe 'Till' do
+  subject(:order){ Order.new }
+  it 'Customer places order & receives total' do
+    order.place_order("Americano", 4)
+    order.place_order("Tiramisu", 2)
+    order.place_order("Blueberry Muffin", 5)
+    expect(order.calculate_total).to eq(63.07)
+    # 58.05
+    # 5.02
+  end
+end

@@ -19,7 +19,7 @@ class Total
 
   def grand_total
     @total = order_sum + tax
-    return @total
+    return @total.round(2)
   end
 
 end
