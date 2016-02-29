@@ -46,3 +46,4 @@ Version 3
 Implement an user interface that can actually be used as a till.
 
 You may use whatever technologies you see fit.
+IT WORKED
