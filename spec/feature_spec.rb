@@ -22,7 +22,7 @@ describe 'Order' do
     order.place_order("Americano", 4)
     order.place_order("Tiramisu", 2)
     order.place_order("Blueberry Muffin", 5)
-    expect(order.calculate_total).to eq(63.07)
+    expect(order.calculate_total).to eq(57.82)
   end
 end
 
@@ -30,11 +30,11 @@ describe 'Till' do
   subject(:till){ Till.new }
   it 'Customer orders food, pays & receives change' do
     till.order_food("Cafe Latte", 2)
-    till.order_food("Blueberry Muffin", 1)
+    till.order_food("Muffin Of The Day", 1)
     till.order_food("Choc Mudcake", 1)
     expect(till.order.current_order.length).to eq(3)
     till.pay(25)
-    expect(till.change).to eq(3.33)
+    expect(till.change).to eq(3.27)
     expect(till.order.current_order).to eq([])
   end
 end

@@ -5,7 +5,7 @@ class Till
   attr_reader :order
 
   def initialize
-    @order = Order.new
+    new_order
   end
 
   def order_food(item, amount)
